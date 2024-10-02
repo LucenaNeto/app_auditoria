@@ -21,10 +21,11 @@ class TelaPrincipal extends StatelessWidget {
             const SizedBox(height: 20), // espaço entre a imagem e o botão
             ElevatedButton(
               style: ElevatedButton.styleFrom(
+                textStyle: TextStyle(fontSize: 14),
                 backgroundColor: const Color.fromARGB(132, 101, 151, 123),
                 shape: RoundedRectangleBorder(
                     borderRadius:
-                        BorderRadius.circular(12) // bordas arredondadas
+                        BorderRadius.circular(20) // bordas arredondadas
                     ),
               ),
               onPressed: () {
@@ -33,7 +34,7 @@ class TelaPrincipal extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => FormularioTela()),
                 );
               },
-              child: const Text('Criar nova auditoria'),
+              child: const Text('Crias Nova Audioria'),
             ),
           ],
         ),
