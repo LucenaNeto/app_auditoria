@@ -1,38 +1,39 @@
-/*
 class Question {
-  final int? id;
-  String questionText;
-  bool? answer;
-  String? selectOpId;
-  String? imageData;
+  final int? id; // ID da pergunta, pode ser nulo
+  String questionText; // Texto da pergunta
+  bool? answer; // Resposta da pergunta (Sim/Não, verdadeiro/falso)
+  String?
+      selectOpId; // ID da opção selecionada, caso a pergunta seja de múltipla escolha
+  String? imageData; // Caminho ou dados da imagem anexada
 
-  Question(
-      {required this.id,
-      required this.questionText,
-      this.answer,
-      this.imageData,
-      this.selectOpId});
-}*/
+  // Construtor
+  Question({
+    required this.id,
+    required this.questionText,
+    this.answer,
+    this.imageData,
+    this.selectOpId,
+  });
 
-/*
-// Metodo p/ converter em JSON
+  // Método para converter a pergunta em JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'questionText': questionText, // Corrigido o erro de digitação
+      'answer': answer, // Incluindo a resposta no JSON
+      'selectOpId': selectOpId,
+      'imageData': imageData, // Corrigido o nome da variável
+    };
+  }
 
-Map<String , dynamic> toJson(){
-  return{
-    'id': id,
-    'questionText': questioText,
-    'selectOpId': selectOpId,
-    'imagePath': imagePath,
-  };
-}
-
-// Método para criar uma instância de Question a partir de um mapa (JSON)
+  // Método para criar uma instância de Question a partir de um mapa (JSON)
   factory Question.fromJson(Map<String, dynamic> json) {
     return Question(
       id: json['id'],
       questionText: json['questionText'],
+      answer: json['answer'], // Incluindo a resposta na desserialização
       selectOpId: json['selectOpId'],
-      imagePath: json['imagePath'],
+      imageData: json['imageData'], // Corrigido o nome da variável
     );
   }
-*/
+}
